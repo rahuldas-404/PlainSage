@@ -1,0 +1,49 @@
+---
+import type { Stats as Props } from '~/types';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
+
+// Define props and ensure they are received as properties
+interface FinancialStatsProps {
+  title: string;
+  subtitle: string;
+  stats: { title: string; amount: string; icon?: string }[];
+}
+
+const { title, subtitle, stats } = Astro.props as FinancialStatsProps;
+---
+
+<WidgetWrapper>
+  <Headline title={title} subtitle={subtitle} />
+  
+  <div class="flex flex-wrap justify-center gap-8 mt-8">
+    {stats.map(({ title, amount, icon }) => (
+      <div class="relative w-full sm:w-80 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transform transition-transform hover:scale-105 group">
+        
+        <div class="absolute top-0 right-0 p-4 bg-gradient-to-t from-blue-500 to-indigo-600 rounded-bl-2xl rounded-tr-xl text-white shadow-lg group-hover:rotate-6 transform transition-all">
+          {icon && (
+            <Icon name={icon} class="w-12 h-12" />
+          )}
+        </div>
+
+        <div class="pt-14 pb-6">
+          {amount && (
+            <div class="font-bold text-4xl text-primary dark:text-yellow-400">
+              <span class="text-red-600">{String(amount).split(' ')[0]}</span>
+              <span>{String(amount).slice(String(amount).indexOf(' '))}</span>
+            </div>
+          )}
+          
+          {title && (
+            <div class="text-lg font-medium uppercase tracking-widest text-gray-800 dark:text-gray-300 mt-3">
+              {title}
+            </div>
+          )}
+        </div>
+
+        <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl opacity-10 blur-sm group-hover:opacity-20 group-hover:blur-none transition-all"></div>
+      </div>
+    ))}
+  </div>
+</WidgetWrapper>

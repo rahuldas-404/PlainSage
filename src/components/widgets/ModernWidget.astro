@@ -1,0 +1,82 @@
+---
+// Import necessary components
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
+
+// Import Swiper and necessary modules
+import { Swiper, SwiperSlide } from 'swiper/react'; // Swiper and SwiperSlide components
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Pagination, Navigation } from 'swiper'; // Correct way to import modules
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+  id,
+  isDark = false,
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass="max-w-7xl mx-auto px-6 py-12">
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  
+  <Swiper
+    spaceBetween={30}
+    slidesPerView={1}
+    breakpoints={{
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }}
+    pagination={{ clickable: true }}
+    navigation={true}
+    modules={[Pagination, Navigation]} // Using correct modules
+    className="mt-12"
+  >
+    {items.map(({ title, description, points, icon }, index) => {
+      const gradientColors = [
+        'bg-gradient-to-r from-blue-200 to-green-200',
+        'bg-gradient-to-r from-pink-200 to-yellow-200',
+        'bg-gradient-to-r from-teal-200 to-purple-200',
+        'bg-gradient-to-r from-indigo-200 to-lime-200',
+        'bg-gradient-to-r from-red-200 to-orange-200',
+      ];
+
+      const cardGradient = gradientColors[index % gradientColors.length];
+
+      return (
+        <SwiperSlide key={index}>
+          <div
+            className={`relative ${cardGradient} rounded-2xl shadow-lg border border-gray-200 p-8 hover:scale-105 transform transition-all duration-300 ease-in-out`}
+          >
+            {icon && (
+              <div className="absolute top-0 right-0 m-4 bg-white text-gray-700 rounded-full shadow-lg p-4">
+                <Icon name={icon} className="w-12 h-12" />
+              </div>
+            )}
+            
+            <div className="pt-14">
+              <h3 className="text-xl font-semibold text-gray-800 text-center">{title}</h3>
+              <p className="text-sm text-gray-700 text-center mt-3">{description}</p>
+              {points && (
+                <ul className="mt-4 space-y-2">
+                  {points.map((point, pointIndex) => (
+                    <li key={pointIndex} className="flex items-start space-x-2">
+                      <span className="w-2.5 h-2.5 bg-indigo-500 rounded-full flex-shrink-0"></span>
+                      <p className="text-sm text-gray-700">{point}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </SwiperSlide>
+      );
+    })}
+  </Swiper>
+</WidgetWrapper>

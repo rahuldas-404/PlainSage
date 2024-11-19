@@ -1,0 +1,469 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+// import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import ModernWidget from '~/components/widgets/ModernWidget.astro';
+// import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+// import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'PlainSage',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Book a Demo',
+      href: '#',
+      target: '_blank',
+    },
+  ]}
+>
+  <Fragment slot="title">
+    <span id="hero-title">When Compliance Meets<span class="text-accent dark:text-white highlight"> Innovation</span></span>
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      <span class="font-semibold">AI agent</span>that eliminates kyb and aml bottlenecks with deeply researched ai decisions with explained proofs and securing data at the highest standards.
+    </span>
+  </Fragment>
+</Hero>
+
+
+  <!-- Note Widget ******************* -->
+
+  <!-- <Note /> -->
+
+  <ModernWidget  
+  id="aligned-widget"  
+  tagline="Compliance Simplified"  
+  title="Key Features for Risk Management"  
+  subtitle="Modern tools designed for efficient compliance monitoring and risk management."  
+  items={[  
+    {  
+      title: 'Adverse Media Monitoring',  
+      description: 'Identify potential risks with real-time global news scanning.',  
+      points: [  
+        'Multi-language coverage across diverse sources',  
+        'Immediate updates for quick risk awareness',  
+      ],  
+      icon: 'tabler:news',  
+    },  
+    {  
+      title: 'PEP & Sanctions Screening',  
+      description: 'Ensure compliance by screening against up-to-date PEP and sanctions lists.',  
+      points: [  
+        'Access global databases with customizable risk rules',  
+        'Real-time alerts for PEP status changes',  
+      ],  
+      icon: 'tabler:list-check',  
+    },  
+    {  
+      title: 'UBO & Source of Wealth Analysis',  
+      description: 'Uncover ownership structures and verify wealth origins.',  
+      points: [  
+        'Visualize complex corporate hierarchies',  
+        'Cross-reference data for accurate wealth verification',  
+      ],  
+      icon: 'tabler:chart-bar',  
+    },  
+    {  
+      title: 'SAR & UAR Management',  
+      description: 'Simplify regulatory reporting with efficient SAR and UAR management.',  
+      points: [  
+        'Reduce filing time by 70%',  
+        'Seamless integration with filing systems',  
+      ],  
+      icon: 'tabler:file-report',  
+    },  
+    {  
+      title: 'Risk Intelligence Network',  
+      description: 'Visualize and uncover hidden relationships between entities.',  
+      points: [  
+        'Map corporate structures and indirect relationships',  
+      ],  
+      icon: 'tabler:network',  
+    },  
+    {  
+      title: 'Data Security',  
+      description: 'Ensure data protection with advanced security protocols.',  
+      points: [  
+        'End-to-End Encryption',  
+        'Access Control for authorized personnel',  
+      ],  
+      icon: 'tabler:lock',  
+    },  
+    {  
+      title: 'Powered Explainable AI',  
+      description: 'Make informed decisions with transparent AI analysis.',  
+      points: [  
+        'Auditable decision-making trail for compliance',  
+      ],  
+      icon: 'tabler:brain',  
+    },  
+  ]}  
+/>  
+
+
+
+
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Understanding Anti-Money Laundering"
+    title="The Importance of Anti-Money Laundering"
+    subtitle="AML measures play a crucial role in disrupting illegal activities, protecting businesses, and enhancing global security."
+    items={[
+      {
+        title: 'Disrupting Illegal Funding',
+        description:
+          'AML practices break the chain of illegal funds that support terrorism, trafficking, and other criminal activities.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Enhanced Business Security',
+        description:
+          'Implementing AML safeguards ensures that businesses are protected from financial crime, fraud, and reputational damage.',
+        icon: 'tabler:building-bank',
+      },
+      {
+        title: 'Strengthening Regulatory Compliance',
+        description:
+          'AML measures help businesses stay compliant with global financial regulations, avoiding legal risks and penalties.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'Improving Transparency in Financial Systems',
+        description:
+          'Transparency is crucial for detecting suspicious activities and maintaining integrity within the financial industry.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Supporting Social and Economic Stability',
+        description:
+          'AML efforts contribute to a safer society by preventing funds from flowing into dangerous and destabilizing activities.',
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Encouraging Trust in Financial Institutions',
+        description:
+          'Adopting strong AML standards reinforces customer trust and strengthens the reputation of financial institutions.',
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+/>
+
+
+  <!-- Content Widget **************** -->
+
+  <Content
+  isReversed
+  tagline="Our Commitment to Change"
+  title="Empowering Organizations to Combat Financial Crime"
+  items={[
+    {
+      title: 'Innovative AI-Powered Solutions',
+      description:
+        'Utilizing advanced AI technology to enhance your compliance processes and provide accurate risk assessments.',
+    },
+    {
+      title: 'Comprehensive Risk Analysis',
+      description:
+        'Offering a holistic view of compliance with thorough PEP screening and UBO identification to mitigate risks effectively.',
+    },
+    {
+      title: 'Confident Decision Making',
+      description:
+        'Equipping organizations with the insights needed to navigate the complexities of financial compliance confidently.',
+    },
+  ]}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Empowering Organizations with Innovative Tools</h3>
+    At Plainsage, we are dedicated to providing comprehensive solutions that allow organizations to confidently navigate financial compliance complexities.
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isAfterContent
+    items={[
+      {
+        title: 'High level of customization',
+        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+      },
+      {
+        title: 'Multiple layout possibilities',
+        description:
+          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+      },
+      {
+        title: 'Fully responsive design',
+        description:
+          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+      },
+      {
+        title: 'Integration of media',
+        description:
+          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Enhanced user engagement',
+        description:
+          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+      },
+      {
+        title: 'Continuous improvement',
+        description:
+          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+      },
+      {
+        title: 'Time and resource efficiency',
+        description:
+          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
+      },
+      {
+        title: 'Community support',
+        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+  title="What Sets Us Apart"
+  items={[
+    {
+      title: 'Secured <span class="font-medium">Cipher Computation</span>',
+      description:
+        "Safeguarding sensitive data throughout compliance tasks. Our advanced encryption ensures data integrity and security, protecting your organization's critical information.",
+      icon: 'tabler:lock',
+    },
+    {
+      title: 'GPT-Powered <span class="font-medium">Risk Assessment</span>',
+      description:
+        "Leveraging GPT-powered solutions to enhance risk assessment and decision-making accuracy. Achieve unparalleled insights for a proactive approach to compliance.",
+      icon: 'tabler:brain',
+    },
+    {
+      title: 'Beyond <span class="font-medium">Checklist Compliance</span>',
+      description:
+        "Moving beyond simple checklists to deliver comprehensive, real-time insights. Our approach provides a deeper understanding and greater adaptability in the evolving regulatory landscape.",
+      icon: 'tabler:list-check',
+    },
+    {
+  title: 'Dark Web Due Diligence',
+  description:
+    "Conducting thorough investigations to assess risks and opportunities, ensuring informed decisions that protect your business interests.",
+  icon: 'tabler:search',
+},
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+    alt: 'Secured Technologies Image',
+  }}
+/>
+
+
+  <!-- Features2 Widget ************** -->
+
+  <!-- <Features2
+  title="Why Choose Us?"
+  subtitle="Join leading businesses in leveraging our technology for compliance, security, and regulatory agility."
+  tagline="Our Advantages"
+  items={[
+    {
+      title: 'Advanced AI Agents',
+      description:
+        'Designed to enhance efficiency, accuracy, and speed, our AI solutions go beyond conventional compliance to deliver exceptional insights.',
+      icon: 'tabler:brain', // Alternative icon suggestion
+    },
+    {
+      title: 'Comprehensive Compliance Coverage',
+      description:
+        'From AML to KYC, our technology covers every angle, ensuring that all aspects of your compliance processes are managed effectively.',
+      icon: 'tabler:brain',
+    },
+    {
+      title: 'Real-Time Risk Assessment',
+      description:
+        'Stay proactive with real-time monitoring and risk assessment, enabling informed decisions in an ever-changing regulatory environment.',
+      icon: 'tabler:brain:radar',
+    },
+    {
+      title: 'Seamless Integration',
+      description:
+        'Our platform is designed for smooth integration, enhancing your existing workflows without disrupting business operations.',
+      icon: 'tabler:brain:connect',
+    },
+    {
+      title: 'Regulatory Adaptability',
+      description:
+        'Our solutions evolve with the regulations, so your business remains compliant and ahead of any regulatory changes.',
+      icon: 'tabler:brain:document',
+    },
+    {
+      title: 'Scalable and Secure',
+      description:
+        'Built with scalability in mind, our platform grows with your business while prioritizing data security at every step.',
+      icon: 'tabler:brain:lock',
+    },
+    {
+      title: 'Enhanced Automation',
+      description:
+        'Say goodbye to manual compliance tasks. Our automated processes help you save time and reduce the risk of human error.',
+      icon: 'tabler:brain:robot',
+    },
+    {
+      title: '24/7 Support',
+      description:
+        'Our team is here around the clock to support you, ensuring a smooth experience with minimal downtime and maximum efficiency.',
+      icon: 'tabler:brain:help',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Features2>
+ -->
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <!-- <BlogLatestPosts
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
+                `}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <!-- <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why AstroWind?',
+        description:
+          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+      },
+      {
+        title: 'What do I need to start?',
+        description:
+          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+      },
+      {
+        title: 'How to install the Astro + Tailwind CSS template?',
+        description:
+          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+      },
+      {
+        title: "What's something that you don't understand?",
+        description:
+          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+      },
+      {
+        title: 'What is something that you would like to try again?',
+        description:
+          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+      },
+      {
+        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        description:
+          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+      },
+    ]}
+  /> -->
+
+  <!-- Stats Widget ****************** -->
+
+  <!-- <Stats
+    stats={[
+      { title: 'Downloads', amount: '132K' },
+      { title: 'Stars', amount: '24.8K' },
+      { title: 'Forks', amount: '10.3K' },
+      { title: 'Users', amount: '48.4K' },
+    ]}
+  /> -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Get Started',
+      href: '#',
+      target: '_blank',
+      icon: 'tabler:rocket',
+    },
+  ]}
+>
+  <Fragment slot="title">
+    <span class="text-blue-600">Welcome to <span class="font-bold text-[#f59e0b]">PlainSage</span> -</span> <br class="block sm:hidden" /> 
+    <span class="text-blue-600">Where <span class="font-bold text-[#f59e0b]">Compliance</span> Meets Innovation</span>
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    Transform your compliance approach with our suite of cutting-edge products designed specifically for the Indian market.
+  </Fragment>
+</CallToAction>
+
+
+</Layout>
