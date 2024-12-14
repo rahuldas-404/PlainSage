@@ -1,0 +1,142 @@
+---
+const items = [
+  {
+    title: "Adverse Media Monitoring",
+    description: "Identify potential risks with real-time global news scanning.",
+    points: [
+      "Multi-language coverage across diverse sources",
+      "Immediate updates for quick risk awareness",
+    ],
+    icon: "tabler:news",
+  },
+  {
+    title: "PEP & Sanctions Screening",
+    description: "Ensure compliance by screening against up-to-date PEP and sanctions lists.",
+    points: [
+      "Access global databases with customizable risk rules",
+      "Real-time alerts for PEP status changes",
+    ],
+    icon: "tabler:list-check",
+  },
+  {
+    title: "UBO & Source of Wealth Analysis",
+    description: "Uncover ownership structures and verify wealth origins.",
+    points: [
+      "Visualize complex corporate hierarchies",
+      "Cross-reference data for accurate wealth verification",
+    ],
+    icon: "tabler:chart-bar",
+  },
+  {
+    title: "SAR & UAR Management",
+    description: "Simplify regulatory reporting with efficient SAR and UAR management.",
+    points: [
+      "Reduce filing time by 70%",
+      "Seamless integration with filing systems",
+    ],
+    icon: "tabler:file-report",
+  },
+  {
+    title: "Risk Intelligence Network",
+    description: "Visualize and uncover hidden relationships between entities.",
+    points: ["Map corporate structures and indirect relationships"],
+    icon: "tabler:network",
+  },
+  {
+    title: "Data Security",
+    description: "Ensure data protection with advanced security protocols.",
+    points: ["End-to-End Encryption", "Access Control for authorized personnel"],
+    icon: "tabler:lock",
+  },
+  {
+    title: "Powered Explainable AI",
+    description: "Make informed decisions with transparent AI analysis.",
+    points: ["Auditable decision-making trail for compliance"],
+    icon: "tabler:brain",
+  },
+];
+---
+
+<div
+  id="FeatureSlider"
+  class="swiper mt-10"
+  style={{
+    "--swiper-pagination-color": "#B9FF66",
+    "--swiper-pagination-bullet-inactive-color": "#fff",
+    "--swiper-pagination-bullet-inactive-opacity": "1",
+    "--swiper-pagination-bullet-size": "19px",
+    "--swiper-pagination-bullet-horizontal-gap": "10px",
+  }}
+>
+  <div class="swiper-wrapper">
+    {items.map((item) => (
+      <div class="swiper-slide flex flex-col items-center text-white px-4">
+        <div class="bg-black rounded-lg shadow-lg p-6 w-full max-w-sm">
+          <div class="flex justify-center items-center text-4xl mb-4 text-lime-400">
+            <i class={item.icon}></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
+          <p class="mb-4">{item.description}</p>
+          <ul class="list-disc ml-5 space-y-1">
+            {item.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<script>
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import "swiper/css/navigation";
+  import Swiper from "swiper";
+  import { Pagination, Navigation } from "swiper/modules";
+
+  new Swiper("#FeatureSlider", {
+    modules: [Pagination, Navigation],
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    loop: true,
+    autoplay: false,
+    grabCursor: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
+  });
+</script>
+
+<style>
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .swiper-pagination {
+    bottom: 20px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #b9ff66;
+  }
+</style>

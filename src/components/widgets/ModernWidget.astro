@@ -1,82 +1,239 @@
 ---
-// Import necessary components
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Headline from '~/components/ui/Headline.astro';
-import { Icon } from 'astro-icon/components';
-
-// Import Swiper and necessary modules
-import { Swiper, SwiperSlide } from 'swiper/react'; // Swiper and SwiperSlide components
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-import { Pagination, Navigation } from 'swiper'; // Correct way to import modules
-
-const {
-  title = await Astro.slots.render('title'),
-  subtitle = await Astro.slots.render('subtitle'),
-  tagline = await Astro.slots.render('tagline'),
-  items = [],
-  id,
-  isDark = false,
-} = Astro.props;
+const slides = [
+  {
+    title: 'Adverse Media Monitoring',
+    description: 'Identify potential risks with real-time global news scanning.',
+    points: [
+      'Multi-language coverage across diverse sources',
+      'Immediate updates for quick risk awareness',
+    ],
+    emoji: '📰',
+  },
+  {
+    title: 'PEP & Sanctions Screening',
+    description: 'Ensure compliance by screening against up-to-date PEP and sanctions lists.',
+    points: [
+      'Access global databases with customizable risk rules',
+      'Real-time alerts for PEP status changes',
+    ],
+    emoji: '✅',
+  },
+  {
+    title: 'UBO & Source of Wealth Analysis',
+    description: 'Uncover ownership structures and verify wealth origins.',
+    points: [
+      'Visualize complex corporate hierarchies',
+      'Cross-reference data for accurate wealth verification',
+    ],
+    emoji: '📊',
+  },
+  {
+    title: 'SAR & UAR Management',
+    description: 'Simplify regulatory reporting with efficient SAR and UAR management.',
+    points: [
+      'Reduce filing time by 70%',
+      'Seamless integration with filing systems',
+    ],
+    emoji: '📄',
+  },
+  {
+    title: 'Risk Intelligence Network',
+    description: 'Visualize and uncover hidden relationships between entities.',
+    points: [
+      'Map corporate structures and indirect relationships',
+      'Identify patterns and anomalies in transactional data for enhanced risk insights',
+    ],
+    emoji: '🌐',
+  },
+  {
+    title: 'Data Security',
+    description: 'Ensure data protection with advanced security protocols.',
+    points: [
+      'End-to-End Encryption',
+      'Access Control for authorized personnel',
+    ],
+    emoji: '🔒',
+  },
+  {
+    title: 'Powered Explainable AI',
+    description: 'Make informed decisions with transparent AI analysis.',
+    points: [
+      'Auditable decision-making trail for compliance',
+      'Generate insights with clear visual explanations for enhanced user trust',
+    ],
+    emoji: '🧠',
+  },
+];
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass="max-w-7xl mx-auto px-6 py-12">
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
-  
-  <Swiper
-    spaceBetween={30}
-    slidesPerView={1}
-    breakpoints={{
-      640: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    }}
-    pagination={{ clickable: true }}
-    navigation={true}
-    modules={[Pagination, Navigation]} // Using correct modules
-    className="mt-12"
-  >
-    {items.map(({ title, description, points, icon }, index) => {
-      const gradientColors = [
-        'bg-gradient-to-r from-blue-200 to-green-200',
-        'bg-gradient-to-r from-pink-200 to-yellow-200',
-        'bg-gradient-to-r from-teal-200 to-purple-200',
-        'bg-gradient-to-r from-indigo-200 to-lime-200',
-        'bg-gradient-to-r from-red-200 to-orange-200',
-      ];
+<div class="text-center mb-10">
+  <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">
+    Key Features of Our Solution
+  </h1>
+  <p class="text-lg text-gray-700 dark:text-gray-300 mt-2">
+    Discover the unique features that make our product stand out.
+  </p>
+</div>
 
-      const cardGradient = gradientColors[index % gradientColors.length];
+<div
+  id="ProjectSlider"
+  class="swiper mt-10"
+  style={{
+    "--swiper-pagination-color": "#B9FF66",
+    "--swiper-pagination-bullet-inactive-color": "#fff",
+    "--swiper-pagination-bullet-inactive-opacity": "1",
+    "--swiper-pagination-bullet-size": "19px",
+    "--swiper-pagination-bullet-horizontal-gap": "10px",
+  }}
+>
+  <div class="swiper-wrapper mt-[84px] mb-[124px]" data-cursor="swipe">
+    {slides.map((slide, index) => (
+      <div
+        key={index}
+        class="swiper-slide relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl transform transition-transform hover:scale-105 group w-full sm:w-80 mx-auto"
+        role="group"
+        aria-label={`${index + 1} / ${slides.length}`}
+      >
+        {/* Emoji Section */}
+        <div class="absolute top-0 right-0 p-4 bg-gradient-to-t from-blue-500 to-indigo-600 rounded-bl-2xl rounded-tr-xl text-white shadow-lg group-hover:rotate-6 transform transition-all text-3xl">
+          {slide.emoji}
+        </div>
 
-      return (
-        <SwiperSlide key={index}>
-          <div
-            className={`relative ${cardGradient} rounded-2xl shadow-lg border border-gray-200 p-8 hover:scale-105 transform transition-all duration-300 ease-in-out`}
-          >
-            {icon && (
-              <div className="absolute top-0 right-0 m-4 bg-white text-gray-700 rounded-full shadow-lg p-4">
-                <Icon name={icon} className="w-12 h-12" />
-              </div>
-            )}
-            
-            <div className="pt-14">
-              <h3 className="text-xl font-semibold text-gray-800 text-center">{title}</h3>
-              <p className="text-sm text-gray-700 text-center mt-3">{description}</p>
-              {points && (
-                <ul className="mt-4 space-y-2">
-                  {points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start space-x-2">
-                      <span className="w-2.5 h-2.5 bg-indigo-500 rounded-full flex-shrink-0"></span>
-                      <p className="text-sm text-gray-700">{point}</p>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </div>
-        </SwiperSlide>
-      );
-    })}
-  </Swiper>
-</WidgetWrapper>
+        {/* Content Section */}
+        <div class="pt-14 pb-6">
+          <h2 class="font-bold text-2xl text-primary dark:text-yellow-400 mb-3">
+            {slide.title}
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300">{slide.description}</p>
+          <ul class="space-y-2 mt-4">
+            {slide.points.map((point, pointIndex) => (
+              <li key={pointIndex} class="flex items-center text-gray-800 dark:text-gray-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="h-5 w-5 text-lime-400 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Background Glow */}
+        <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl opacity-10 blur-sm group-hover:opacity-20 group-hover:blur-none transition-all"></div>
+      </div>
+    ))}
+  </div>
+
+  {/* Pagination and Navigation Controls */}
+  <div class="flex justify-between lg:justify-center mb-[68px] lg:gap-[189px]">
+    <div class="swiper-button-prev w-10 h-10 bg-teal-600 hover:bg-teal-700 rounded-full flex justify-center items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="text-white w-6 h-6">
+        <path
+          fill="#ffffff"
+          d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+        ></path>
+      </svg>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next w-10 h-10 bg-teal-600 hover:bg-teal-700 rounded-full flex justify-center items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="text-white w-6 h-6">
+        <path
+          fill="#ffffff"
+          d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import Swiper from "swiper";
+  import { Pagination, Navigation } from "swiper/modules";
+  import { register } from "swiper/element/bundle";
+  register();
+
+  Swiper.use([Pagination, Navigation]);
+
+  new Swiper("#ProjectSlider", {
+    modules: [Pagination, Navigation],
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    loop: true,
+    autoplay: false,
+    grabCursor: false,
+    mousewheel: false,
+    slidesPerView: 2,
+    centeredSlides: true,
+    spaceBetween: 50,
+    breakpoints: {
+      1024: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1,
+      },
+    },
+  });
+</script>
+<style>
+/* body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+} */
+
+.bubble {
+    position: relative;
+    padding: 8%;
+    background-color: black;
+    color: white;
+    border-radius: 45px;
+    border: 1px solid #B9FF66;
+  }
+  .bubble:after {
+    content: "";
+    position: absolute;
+    bottom: -20px; /* Adjust this value to move the arrow up or down */
+    left: 50px; /* Adjust this value to move the arrow left or right */
+    border-width: 22px; /* Adjust this value to change the size of the arrow */
+    border-style: solid;
+    border-color: black transparent transparent black;
+  }
+  .bubble:before {
+    content: "";
+    position: absolute;
+    bottom: -40px; /* This should be 2px more than the bottom value of .bubble:after */
+    left: 48px; /* This should be 1px less than the left value of .bubble:after */
+    border-width: 20px; /* Adjust this to match the border-width of .bubble:after */
+    border-style: solid;
+    border-color: #B9FF66 transparent transparent #B9FF66;
+  }
+  .swiper-wrapper {
+    position: relative;
+  }
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 500ms ease-in-out;
+  }
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    width: auto !important;
+    position: static !important;
+  }
+</style>

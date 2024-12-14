@@ -1,0 +1,158 @@
+---
+import Container from "~/components/widgets/Container.astro";
+---
+
+<div id="what-sets-us-apart" class="bg-gray-50 py-16 dark:bg-gray-900">
+  <Container>
+    <!-- Section Title and Description -->
+    <div class="text-center space-y-8">
+      <h2 class="text-5xl font-extrabold text-gray-800 dark:text-white md:text-6xl leading-tight tracking-tighter">
+        What Sets Us Apart
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
+        Our unique approach blends innovation, technology, and customer-focused solutions to create extraordinary results.
+      </p>
+    </div>
+
+    <!-- Feature Cards Section -->
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+      <!-- Feature 1 -->
+      <div class="flex flex-col items-center bg-white shadow-2xl rounded-3xl p-10 dark:bg-gray-800 transform transition-all hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/40 duration-300">
+        <div class="mb-6 p-4 rounded-full border-4 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition duration-200">
+          <!-- Tech Icon (Chip) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12">
+            <path d="M16 8H8V6h8V4h2v2h2v2h-2v2h-2V8zM6 10v8h12v-8H6zm0-2h12V4H6v4z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4 tracking-tight text-center">
+          Cutting-Edge Technology
+        </h3>
+        <p class="text-gray-500 dark:text-gray-300 text-center">
+          Our solutions use the latest technology to create systems that are efficient, reliable, and future-ready.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="flex flex-col items-center bg-white shadow-2xl rounded-3xl p-10 dark:bg-gray-800 transform transition-all hover:scale-105 hover:shadow-2xl hover:shadow-green-500/40 duration-300">
+        <div class="mb-6 p-4 rounded-full border-4 border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition duration-200">
+          <!-- Expertise Icon (Brain) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12">
+            <path fill-rule="evenodd" d="M12 2c2.485 0 4.732 1.01 6.364 2.636 1.633 1.626 2.636 3.872 2.636 6.364 0 2.485-1.01 4.732-2.636 6.364-1.632 1.627-3.879 2.636-6.364 2.636-2.485 0-4.732-1.01-6.364-2.636C5.01 12.732 4 10.485 4 8c0-2.485 1.01-4.732 2.636-6.364C7.268 3.01 9.515 2 12 2zM6 8c0 2.486 1.01 4.732 2.636 6.364C10.268 15.01 11.515 16 12 16s1.732-.99 3.364-2.636C16.99 12.732 18 10.485 18 8c0-2.486-1.01-4.732-2.636-6.364C14.732 3.01 13.485 2 12 2c-2.485 0-4.732 1.01-6.364 2.636C5.01 3.01 6 5.515 6 8z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4 tracking-tight text-center">
+          Unmatched Expertise
+        </h3>
+        <p class="text-gray-500 dark:text-gray-300 text-center">
+          With decades of experience, our team ensures the highest quality outcomes, tailored to your needs.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="flex flex-col items-center bg-white shadow-2xl rounded-3xl p-10 dark:bg-gray-800 transform transition-all hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/40 duration-300">
+        <div class="mb-6 p-4 rounded-full border-4 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition duration-200">
+          <!-- Customer Icon (People) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12">
+            <path fill-rule="evenodd" d="M12 2a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zM4 16c0 2.028 1.639 3.56 3.56 3.56h9.72C18.361 19.56 20 18.028 20 16V8a2 2 0 00-2-2H6a2 2 0 00-2 2v8z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4 tracking-tight text-center">
+          Customer-Centric Approach
+        </h3>
+        <p class="text-gray-500 dark:text-gray-300 text-center">
+          We prioritize customer satisfaction and offer customized solutions to meet unique challenges.
+        </p>
+      </div>
+    </div>
+  </Container>
+</div>
+
+<style>
+  /* General Layout and Styles */
+  .grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Auto adjust based on screen size */
+    justify-items: center; /* Centers the cards horizontally */
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  /* Section Title Styling */
+  .text-center .text-5xl {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+
+  .text-center p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #4b5563;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  /* Card Styling */
+  .card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .card h3 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+
+  .card p {
+    color: #6b7280;
+    text-align: center;
+  }
+
+  /* Icons */
+  .card svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Hover Effects on Cards */
+  .card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-12px);
+  }
+
+  .card svg:hover {
+    color: #fff;
+  }
+
+  /* Dark Mode Styling */
+  .dark .bg-gray-50 {
+    background-color: #1f2937; /* Dark background */
+  }
+
+  .dark .card {
+    background-color: #2d3748;
+  }
+
+  .dark .card h3 {
+    color: #edf2f7;
+  }
+
+  .dark .card p {
+    color: #cbd5e0;
+  }
+
+  .dark .card svg {
+    color: #facc15;
+  }
+</style>

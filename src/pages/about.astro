@@ -4,7 +4,10 @@
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 // import Steps2 from '~/components/widgets/Steps2.astro';
+import Us from '~/components/widgets/us.astro';
+import Problem from '~/components/widgets/problem.astro'
 import Layout from '~/layouts/PageLayout.astro';
+import Set from '~/components/widgets/setus.astro';
 import FinancialStats from '~/components/widgets/FinancialStats.astro';
 
 const metadata = {
@@ -34,6 +37,12 @@ const financialStats = [
       The majority of crime involves the movement of money. Crime, from petty theft to international terrorism, often leaves a financial footprint. Organised crime, political corruption, terrorist financing, and human trafficking rely heavily on the global financial system to launder money and fund their operations. To combat crime is to follow the money trail and disrupt the flow of illicit funds.
     </Fragment>
   </Hero>
+
+  <Us/>
+
+<Problem/>
+
+<Set/>
 
   <!-- Financial Stats Widget -->
   <FinancialStats 

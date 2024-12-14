@@ -1,0 +1,1 @@
+import"./hoisted.2daoxv0f.js";let t=0;const i="When Compliance Meets",n=["Innovation","AI"];function l(){const e=document.getElementById("hero-title");e&&(t=(t+1)%n.length,e.innerHTML=`${i} <span class='text-accent dark:text-white highlight'>${n[t]}</span>`)}setInterval(l,3e3);
