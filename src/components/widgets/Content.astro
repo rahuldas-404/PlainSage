@@ -35,11 +35,11 @@ const {
     tagline={tagline}
     classes={{
       container: 'max-w-3xl mx-auto text-center',
-      title: 'text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text',
+      title: 'text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text',
       subtitle: 'text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-4',
     }}
   />
-  <div class="relative mx-auto max-w-7xl px-6 py-12 md:px-12 bg-white dark:bg-gray-900 rounded-3xl shadow-xl">
+  <div class="relative mx-auto max-w-7xl px-6 py-12 md:px-12 bg-gradient-to-r from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl shadow-2xl">
     <div class={`flex flex-col gap-12 ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
       <div class="flex-1">
         {content && (
@@ -57,16 +57,36 @@ const {
       </div>
       <div class="w-full">
         <ItemGrid
-          items={items}
-          columns={columns}
-          defaultIcon="tabler:check"
-          classes={{
-            container: `grid gap-6 sm:grid-cols-${columns} lg:grid-cols-${columns} xl:grid-cols-${columns} max-w-7xl mx-auto`,
-            panel: 'p-6 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:scale-105 transform transition-transform duration-300 flex flex-col justify-between h-full',
-            title: 'text-xl font-semibold text-gray-900 dark:text-white mb-4 text-lg font-medium',
-            description: 'text-gray-600 dark:text-gray-400 leading-relaxed flex-1',
-          }}
-        />
+  items={items}
+  columns={columns}
+  defaultIcon="tabler:check"
+  classes={{
+    container: `grid gap-8 sm:grid-cols-${columns} lg:grid-cols-${columns} xl:grid-cols-${columns} max-w-7xl mx-auto`,
+    panel: 'p-6 bg-gradient-to-b from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl shadow-md hover:shadow-lg border border-gray-200 dark:border-gray-700 hover:scale-105 transform transition-all duration-300 flex flex-col justify-between h-full',
+    title: 'text-xl font-semibold text-gray-900 dark:text-white mb-4',
+    description: 'text-gray-600 dark:text-gray-400 leading-relaxed flex-1',
+  }}
+>
+  {items.map((item) => (
+    <div class="p-4 flex flex-col items-start">
+      <div class="flex items-center gap-4">
+        <!-- Icon -->
+        <div class="text-4xl text-indigo-500">
+          <i class={`iconify`} data-icon={item.icon}></i>
+        </div>
+        <!-- Title -->
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
+      </div>
+      <!-- Divider -->
+      <div class="w-full h-[2px] bg-gradient-to-r from-indigo-500 to-pink-500 my-4"></div>
+      <!-- Amount -->
+      <div class="text-lg text-gray-700 dark:text-gray-300 font-medium">
+        <span>{item}</span>
+      </div>
+    </div>
+  ))}
+</ItemGrid>
+
       </div>
     </div>
   </div>

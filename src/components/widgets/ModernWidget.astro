@@ -188,6 +188,10 @@ const slides = [
     },
   });
 </script>
+
+
+
+
 <style>
 /* body {
   margin: 0;
@@ -221,19 +225,82 @@ const slides = [
     border-style: solid;
     border-color: #B9FF66 transparent transparent #B9FF66;
   }
-  .swiper-wrapper {
-    position: relative;
-  }
   .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 500ms ease-in-out;
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  align-items: flex-start; /* Align content at the top-left */
+  justify-content: flex-start; /* Start content from the top */
+  width: 100%; /* Uniform width */
+  height: 400px; /* Set a fixed height for all cards */
+  box-sizing: border-box; /* Include padding and border in size */
+  padding: 20px; /* Add consistent padding */
+  overflow: hidden; /* Prevent content overflow */
+  transition: all 500ms ease-in-out;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.swiper-slide ul {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+  flex-grow: 1; /* Ensures content aligns properly */
+}
+
+.swiper-slide ul {
+  flex-grow: 1; /* Allow the list to grow and fill space */
+  overflow-y: auto; /* Enable scrolling for long content */
+}
+
+.swiper-slide .absolute {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4f46e5, #6b21a8);
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .swiper-slide:hover .absolute:before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+} */
+
+
+.group-hover .absolute {
+  transform: rotate(10deg);
+}
+
+.group-hover {
+  scale: 1.03;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
-  .swiper-pagination {
-    display: flex;
-    align-items: center;
-    width: auto !important;
-    position: static !important;
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
   }
+}
+
 </style>

@@ -9,6 +9,7 @@ import Problem from '~/components/widgets/problem.astro'
 import Layout from '~/layouts/PageLayout.astro';
 import Set from '~/components/widgets/setus.astro';
 import FinancialStats from '~/components/widgets/FinancialStats.astro';
+import Process from '~/components/common/process.astro';
 
 const metadata = {
   title: 'About us',
@@ -25,8 +26,12 @@ const financialStats = [
 ];
 ---
 
+<head>
+  <title>{metadata.title}</title>
+  <meta name="description" content={metadata.description} />
+</head>
+
 <Layout metadata={metadata}>
-  <!-- Hero Widget -->
   <Hero tagline="About us">
     <Fragment slot="title">
       Understanding  <br />
@@ -39,6 +44,7 @@ const financialStats = [
   </Hero>
 
   <Us/>
+  <!-- <Process/> -->
 
 <Problem/>
 

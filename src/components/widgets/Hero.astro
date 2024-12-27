@@ -111,9 +111,12 @@ const {
     const titleElement = document.getElementById('hero-title');
     if (titleElement) { // Check if the element exists
       titleIndex = (titleIndex + 1) % dynamicTitles.length;
-      titleElement.innerHTML = `${baseTitle} <span class='text-accent dark:text-white highlight'>${dynamicTitles[titleIndex]}</span>`;
+      const isDarkMode = document.body.classList.contains('dark'); // Check for dark mode
+      const highlightColor = isDarkMode ? 'lightblue' : 'orange'; // Set colors for light and dark modes
+      titleElement.innerHTML = `${baseTitle} <span class='text-accent highlight' style='color: ${highlightColor}'>${dynamicTitles[titleIndex]}</span>`;
     }
   }
 
   setInterval(changeTitle, 3000); // Change title every 3 seconds
 </script>
+

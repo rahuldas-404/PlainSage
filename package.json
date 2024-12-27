@@ -1,7 +1,7 @@
 {
-  "name": "@onwidget/astrowind",
+  "name": "@plainsage",
   "version": "1.0.0-beta.48",
-  "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
+  "description": "Plainsage Website.",
   "type": "module",
   "private": true,
   "engines": {
@@ -30,10 +30,10 @@
     "@fontsource-variable/inter": "^5.1.0",
     "@iconify/react": "^5.0.2",
     "@tabler/icons": "^3.22.0",
-    "astro": "^4.16.8",
+    "astro": "^5.1.1",
     "astro-embed": "^0.7.4",
     "astro-icon": "^1.1.1",
-    "chart.js": "^4.4.6",
+    "chart.js": "^4.4.7",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
     "react": "^18.3.1",
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^3.1.8",
+    "@astrojs/mdx": "^4.0.3",
     "@astrojs/partytown": "^2.1.2",
     "@astrojs/tailwind": "5.1.2",
     "@eslint/js": "^9.12.0",
